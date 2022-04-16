@@ -2,7 +2,9 @@
 
 Credits: [Axel Rauschmayer](https://gist.github.com/rauschma/6cdeb4af7586aa03baed2f925e0a084b)
 
-**Adding or removing an element at either end of an Array:** (return value: item or new array length)
+## **ADDING** or **REMOVING** an element at either end of an Array:
+
+### (return value: item or new array length)
 
 | array before | method | return value | array after |
 |---|---|---|---|
@@ -13,7 +15,7 @@ Credits: [Axel Rauschmayer](https://gist.github.com/rauschma/6cdeb4af7586aa03bae
 |||||
   |<sup>["🟦","🟡","🔺"]</sup>|.unshift(arr.pop())|**3**|<sup>["🔺","🟦","🟡"]</sup>|
 
-**Changing all of an Array (the input Array is modified and returned):** 
+## **CHANGING** all of an Array (the input Array is modified and returned):
 
 | array before | method | return value |
 |---|---|---|
@@ -25,7 +27,7 @@ Credits: [Axel Rauschmayer](https://gist.github.com/rauschma/6cdeb4af7586aa03bae
 |<sup>["🟦","🟡","🔺","🟩"]</sup>|[.sort()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)|<sup>["🔺","🟡","🟦","🟩"]</sup>|
 |<sup>["🟦","🟡","🔺","🟩" ]</sup>|[.copyWithin(1,2,3)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin)|<sup>["🟦",🔺","🔺","🟩" ]</sup>|
 
-**Finding Array elements:**  
+## **FINDING** Array elements:
 
 | array | method | return value |
 |---|---|---|
@@ -35,7 +37,7 @@ Credits: [Axel Rauschmayer](https://gist.github.com/rauschma/6cdeb4af7586aa03bae
 |<sup>["🟦","🟡","🔺"]</sup>|[.find( x => x==="🟦" )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)|<sup>"🟦"</sup>|
 |<sup>["🟦","🟡","🔺"]</sup>|[.findIndex( x => x==="🟦" )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)|**0**|
 
-**Creating a new Array from an existing Array:**
+## **CREATING** a **NEW** Array from an existing Array:
 
 | array before | method (links to MDN) | return value | array after |
 |---|---|---|---|
@@ -47,7 +49,7 @@ Credits: [Axel Rauschmayer](https://gist.github.com/rauschma/6cdeb4af7586aa03bae
 |<sup>["🟦","🟡"]</sup>|[.flatMap( x => [x,x] )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/FlatMap)|<sup>["🟦","🟦","🟡","🟡"]</sup>|<sup>["🟦","🟡"]</sup>|
 |<sup>["🟦","🟡","🔺"]</sup>|[.concat( ["🟩","🔴"] )](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)|<sup>["🟦","🟡","🔺","🟩","🔴"]</sup>|<sup>["🟦","🟡","🔺"]</sup>|
 
-**Computing a summary of an Array:**  
+## **COMPUTING** a **SUMMARY** of an Array:
 
 | array | method | return value|
 |---|---|---|
@@ -58,16 +60,12 @@ Credits: [Axel Rauschmayer](https://gist.github.com/rauschma/6cdeb4af7586aa03bae
 |<sup>["🟦","🟡","🔺"]</sup>|[.reduce( (result,x) => result+x,"🟩")](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce)|<sup>"🟩🟦🟡🔺"</sup>|
 |<sup>["🟦","🟡","🔺"]</sup>|[.reduceRight( (result,x) => result+x,"🟩")](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduceright)|<sup>"🟩🔺🟡🟦"</sup>|
 
-**Listing elements:**  
+## **LISTING** elements (spread operator  `...` required<br>because the below methods return [iterators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterators)):
 
 | array | method | return value ([iterators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterators)) |
 |---|---|---|
-|<sup>["🟦","🟡","🔺"]</sup>|[.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys)|<sup>[0,1,2]</sup>|
-|<sup>["🟦","🟡","🔺"]</sup>|[.values()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values)|<sup>["🟦","🟡","🔺"]</sup>|
-|<sup>["🟦","🟡","🔺"]</sup>|[.entries()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)|<sup>[ [0,"🟦"], [1,"🟡"], [2,"🔺"] ]</sup>|
-
-| spreading `...` required<br>because the above methods return [iterators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#iterators)| return value |
-|---|---|
-|[ ...["🟦","🟡","🔺","🟩"].entries() ]<br>&nbsp;&nbsp;&nbsp;&nbsp;.map( ([key,val]) => val.repeat(key) )|["","🟡","🔺🔺","🟩🟩🟩"]|
+|<sup>[ ...["🟦","🟡","🔺"].keys() ]</sup>|[.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/keys)|<sup>[0,1,2]</sup>|
+|<sup>[ ...["🟦","🟡","🔺"].values() ]</sup>|[.values()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/values)|<sup>["🟦","🟡","🔺"]</sup>|
+|<sup>[ ...["🟦","🟡","🔺"].entries() ]</sup>|[.entries()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/entries)|<sup>[ [0,"🟦"], [1,"🟡"], [2,"🔺"] ]</sup>|
 
 
